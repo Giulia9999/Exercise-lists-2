@@ -6,8 +6,12 @@ public class Main {
         List<Integer> randomNumbers = new ArrayList<>(Arrays.asList(1, 60, 13, 12));
         randomNumbers.addAll(divisorsOf52);
         System.out.println(randomNumbers + " - size: " + randomNumbers.size());
+
         Set<Integer> numberSet = new HashSet<>(randomNumbers);
-        randomNumbers = numberSet.stream().toList();
+        randomNumbers = new ArrayList<>(numberSet);
         System.out.println(randomNumbers + " - size: " + randomNumbers.size());
+
+        Collections.sort(randomNumbers);
+        System.out.println(randomNumbers);
     }
 }
