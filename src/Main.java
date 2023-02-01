@@ -7,5 +7,7 @@ public class Main {
         randomNumbers.addAll(divisorsOf52);
         System.out.println(randomNumbers + " - size: " + randomNumbers.size());
         Set<Integer> numberSet = new HashSet<>(randomNumbers);
+        randomNumbers = numberSet.stream().toList();
+        System.out.println(randomNumbers + " - size: " + randomNumbers.size());
     }
 }
