@@ -8,12 +8,25 @@ public class Main {
         randomNumbers.addAll(divisorsOf52);
         System.out.println(randomNumbers + " - size: " + randomNumbers.size());
 
+       ListIterator<Integer> iterator = randomNumbers.listIterator();
+       while(iterator.hasNext()){
+           int index = iterator.nextIndex();
+           int value = iterator.next();
+           System.out.println(index + " - " + value);
+           for(int i = 0; i< index; i++){
+               if(value == randomNumbers.get(i)){
+                   iterator.remove();
+               }
+           }
+       }
+        System.out.println(randomNumbers);
+
+        System.out.println("----------------------------------------------------");
         Set<Integer> numberSet = new HashSet<>(randomNumbers);
         randomNumbers = new ArrayList<>(numberSet);
         System.out.println(randomNumbers + " - size: " + randomNumbers.size());
 
-        Collections.sort(randomNumbers);
+        Collections.sort(randomNumbers, Collections.reverseOrder());
         System.out.println(randomNumbers);
     }
 }
-
